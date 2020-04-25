@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+</div>
+<div class="header-panel">
+  <button type="button" mat-button (click)="drawer.toggle()">
+    <i style="font-size: 3rem" class="material-icons">menu</i>
+  </button>
+
+</div>
+<mat-drawer-container class="site-container" autosize>
+  <mat-drawer #drawer class="site-sidenav" mode="top">
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col-xs-3">H </div>
+        <div class="col-xs-9">
+          {{loggedInUser().first_name}}
+        </div>
+      </div>
+    </header>
+    <nav>
+      <div class="list-group">
+        <a *ngFor="let folder of displayMenuItems()" [routerLink]="[folder.route]"  class="list-group-item list-group-item-action">
+          {{folder.label}}
+        </a>
+      </div>
+    </nav>
+    <footer>
+
+    </footer>
+  </mat-drawer>
+
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="clearfix"></div>
+</mat-drawer-container>
+<div class="clearfix"></div>
+<mat-divider></mat-divider>
+<div class="row site-footer">
+  <div class="col-1">&nbsp;</div>
+  <div class="col-10">
+    Hello
+  </div>
+  <div class="col-1">&nbsp;</div>
+</div>
