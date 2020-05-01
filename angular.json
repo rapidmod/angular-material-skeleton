@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/uiApp",
+            "outputPath": "dist/public",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,18 +74,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "uiApp:build"
+            "browserTarget": "angular-material-skeleton:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "uiApp:build:production"
+              "browserTarget": "angular-material-skeleton:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "uiApp:build"
+            "browserTarget": "angular-material-skeleton:build"
           }
         },
         "test": {
@@ -124,16 +124,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "uiApp:serve"
+            "devServerTarget": "angular-material-skeleton:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "uiApp:serve:production"
+              "devServerTarget": "angular-material-skeleton:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "uiApp"
+  "defaultProject": "angular-material-skeleton"
 }
